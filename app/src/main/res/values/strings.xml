@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">androidLabs</string>
+    <string name="hello_message">Hello World!</string>
+    <string name="ButtonText">I\’m a button</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="login_name">login name</string>
+    <string name="password">Password</string>
+    <string name="Login">Login</string>
+    <string name="RadioButton1">RadioButton</string>
+    <string name="CheckBox1">CheckBox</string>
+    <string name="Swtich1">Enable Something</string>
+
+</resources>
