@@ -9,5 +9,8 @@
     <string name="RadioButton1">RadioButton</string>
     <string name="CheckBox1">CheckBox</string>
     <string name="Swtich1">Enable Something</string>
-
+    <string name="dialog_title">Close the activity</string>
+    <string name="dialog_message">Do you want to finish the activity?</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
 </resources>

@@ -9,4 +9,8 @@
     <string name="RadioButton1">单选按钮</string>
     <string name="CheckBox1">复选框</string>
     <string name="Swtich1">开启</string>
+    <string name="dialog_title">关闭活动</string>
+    <string name="dialog_message">你想要关闭这个活动吗？</string>
+    <string name="ok">是</string>
+    <string name="cancel">否</string>
 </resources>
