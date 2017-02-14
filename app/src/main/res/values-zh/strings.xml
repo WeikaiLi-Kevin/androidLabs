@@ -13,4 +13,8 @@
     <string name="dialog_message">你想要关闭这个活动吗？</string>
     <string name="ok">是</string>
     <string name="cancel">否</string>
+    <string name="switchOn">开关打开</string>
+    <string name="switchOff">开关关闭</string>
+    <string name="StartChat">开始聊天</string>
+    <string name= "Send">发送</string>
 </resources>

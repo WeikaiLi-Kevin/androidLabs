@@ -41,12 +41,12 @@ public class ListItemsActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    CharSequence text = "Switch is On";
+                    CharSequence text = getString(R.string.switchOn);
                     int duration = Toast.LENGTH_SHORT;
                     Toast toast = Toast.makeText(ListItemsActivity.this, text, duration);
                     toast.show();
                 } else {
-                    CharSequence text = "Switch is Off";
+                    CharSequence text = getString(R.string.switchOff);
                     int duration = Toast.LENGTH_LONG;
                     Toast toast = Toast.makeText(ListItemsActivity.this, text, duration);
                     toast.show();

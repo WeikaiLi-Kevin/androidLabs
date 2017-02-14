@@ -11,6 +11,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.util.Log;
 import android.widget.Button;
+import android.widget.EditText;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -40,15 +41,21 @@ public class LoginActivity extends AppCompatActivity {
     protected void onStart(){
         super.onStart();
         Log.i(ACTIVITY_NAME,"In onStart()");
-
+        final EditText loginEmail = (EditText)findViewById(R.id.loginEmail);
         Button loginButton = (Button)findViewById(R.id.button2);
+        final SharedPreferences sharedPref = getSharedPreferences("Email", Context.MODE_PRIVATE);
+        String defaultValue = sharedPref.getString("Email", "email@domain.com");
+
+        loginEmail.setText(defaultValue);
         loginButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
-                SharedPreferences sharedPref = getSharedPreferences("myFileName", Context.MODE_PRIVATE);
-                String defaultValue = sharedPref.getString("Email", "email@domain.com");
+
+                String login_email = loginEmail.getText().toString();
+
                 SharedPreferences.Editor editor = sharedPref.edit();
-              editor.putString("Email",getString(R.string.login_name));
+                editor.putString("Email",login_email);
                 editor.commit();
+
                 Intent intent = new Intent(LoginActivity.this, StartActivity.class);
                 startActivity(intent);
             }

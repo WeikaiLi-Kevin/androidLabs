@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class StartActivity extends AppCompatActivity {
 
@@ -24,14 +25,26 @@ public class StartActivity extends AppCompatActivity {
                 startActivityForResult(ListItemsIntent,5);
             }
         });
+        Button startChat = (Button)findViewById(R.id.startChat);
+        startChat.setOnClickListener(new View.OnClickListener(){
+            public void onClick (View view){
+                Intent ChatWindowIntent = new Intent(StartActivity.this,ChatWindow.class );
+                startActivity(ChatWindowIntent);
+                Log.i(ACTIVITY_NAME, "User clicked Start Chat");
+            }
+        });
     }
     protected void onActivityResult(int requestCode, int responseCode, Intent data){
         if (requestCode == 5){
             Log.i(ACTIVITY_NAME, "Returned to StartActivity.onActivityResult");
         }
-        if(responseCode == Activity.RESULT_OK){
+        if (responseCode == Activity.RESULT_OK){
             String messagePassed = data.getStringExtra("Response");
             Log.i(ACTIVITY_NAME,messagePassed);
+            int duration = Toast.LENGTH_LONG;
+            Toast toast = Toast.makeText(StartActivity.this, messagePassed, duration);
+            toast.show();
+
         }
     }
     protected void onStart(){
