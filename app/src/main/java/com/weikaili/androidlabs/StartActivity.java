@@ -18,6 +18,13 @@ public class StartActivity extends AppCompatActivity {
         setContentView(R.layout.activity_start);
         Log.i(ACTIVITY_NAME,"In onCreate()");
         Button button = (Button)findViewById(R.id.button);
+        Button toolbar = (Button)findViewById(R.id.toolbar1);
+        toolbar.setOnClickListener(new View.OnClickListener(){
+            public void onClick (View view){
+                    Intent intnt = new Intent(StartActivity.this, TestToolbar.class);
+                startActivity(intnt);
+            }
+        });
         button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick (View view){
@@ -31,6 +38,14 @@ public class StartActivity extends AppCompatActivity {
                 Intent ChatWindowIntent = new Intent(StartActivity.this,ChatWindow.class );
                 startActivity(ChatWindowIntent);
                 Log.i(ACTIVITY_NAME, "User clicked Start Chat");
+            }
+        });
+        Button weather = (Button)findViewById(R.id.weather);
+        weather.setOnClickListener(new View.OnClickListener(){
+            public void onClick (View view) {
+                Intent WeatherIntent = new Intent(StartActivity.this, WeatherForecast.class);
+                startActivity(WeatherIntent);
+                // Log.i(ACTIVITY_NAME, "User clicked Start Chat");
             }
         });
     }

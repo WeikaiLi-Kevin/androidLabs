@@ -17,5 +17,7 @@
     <string name="switchOff">Switch is Off</string>
     <string name="StartChat">Start Chat</string>
     <string name="Send">Send</string>
-
+    <string name="Weather">Weather Forecast</string>
+    <string name="title_activity_test_tool_bar">TestToolBar</string>
+    <string name="title_activity_test_toolbar">TestToolbar</string>
 </resources>

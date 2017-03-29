@@ -163,7 +163,7 @@ public class ChatWindow extends AppCompatActivity {
     }
     public void deleteId(long id)
     {
-        
+
         db.delete(ChatDatabaseHelper.DATABASE_NAME, "_id=?", new String[] { Long.toString(id)});
         arrayId.clear();
         arrayList.clear();//;

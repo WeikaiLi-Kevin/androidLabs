@@ -17,4 +17,5 @@
     <string name="switchOff">开关关闭</string>
     <string name="StartChat">开始聊天</string>
     <string name= "Send">发送</string>
+    <string name="Weather">天气预报</string>
 </resources>

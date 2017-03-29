@@ -18,8 +18,15 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class TestToolbar extends AppCompatActivity {
-
+   String inp = "You selected item 1";
+    private void setInp(String str){
+        inp = str;
+    }
+    private String getInp(){
+        return inp;
+    }
     @Override
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test_toolbar);
@@ -42,10 +49,10 @@ public class TestToolbar extends AppCompatActivity {
     public boolean onOptionsItemSelected (MenuItem mi){
         switch(mi.getItemId()){
             case R.id.action_one:
-                Log.d("Toolbar","Option 1 selected");
+                Log.d("Toolbar",inp);
 
 
-                        Snackbar.make(findViewById(R.id.fab), "You selected item 1", Snackbar.LENGTH_LONG)
+                        Snackbar.make(findViewById(R.id.fab),getInp() , Snackbar.LENGTH_LONG)
                                 .setAction("Action", null).show();
                 break;
             case R.id.action_two:
@@ -80,18 +87,24 @@ public class TestToolbar extends AppCompatActivity {
                 builder1.setView(inf);
 
                         // Add action buttons
-                       builder1 .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                       builder1.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int id) {
-                                Log.i("Dialog","1111");
+                                //Log.i("Dialog","1111");
                                 EditText tx = (EditText) inf.findViewById(R.id.newMsg) ;
-                                String input = tx.getText().toString();
-
-                                Snackbar.make(findViewById(R.id.fab),input , Snackbar.LENGTH_LONG)
+                                setInp(tx.getText().toString());
+                                Log.i("dialog",getInp());
+                                Snackbar.make(findViewById(R.id.fab),getInp() , Snackbar.LENGTH_LONG)
                                         .setAction("Action", null).show();
 
                             }
                         });
+                        builder1.setNegativeButton("Cancel",new DialogInterface.OnClickListener() {
+                          @Override
+                           public void onClick(DialogInterface dialog, int id) {
+                               // User cancelled the dialog
+                           }
+                       });
 
                  AlertDialog dialog1 = builder1.create();
                 dialog1.show();
